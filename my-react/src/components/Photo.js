@@ -1,7 +1,12 @@
-import logo from '../logo.svg';
-export function Photo() {
-    return (
-      <img imageSrc=“./image.jpg />
-  
+
+
+export function My_Photo(props) {
+    return ( 
+        <div>
+
+            <img className="my_photo"
+             src ={props.img} />
+        </div>
+
     );
-  }
+}

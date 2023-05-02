@@ -2,13 +2,16 @@
 import './App.css';
 import { Experience } from './components/Experience';
 import { ContInfo } from './components/ContInfo';
-import { Photo } from './components/Photo';
+import { My_Photo } from './components/Photo';
+import MyImg from './images/photo.jpg';
+
+
 
 function App() {
   return (
     <div className="App">
 
-      <Photo />
+      <My_Photo img={MyImg} />
       <ContInfo />
       <Experience />
     </div>
