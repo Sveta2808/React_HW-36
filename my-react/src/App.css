@@ -3,6 +3,17 @@
 
 }
 
+input {
+  width: 380px;
+  padding: 10px;
+  margin-bottom: 10px;
+  
+}
+
+textarea{
+  margin-bottom: 10px;
+}
+
 .my_photo {
   margin-top: 25px;
   padding-left: 30px;
@@ -70,4 +81,8 @@
   min-height: 30px;
   min-width: 120px;
   margin-right: 20px;
+}
+
+.form {
+  margin: 40px;
 }

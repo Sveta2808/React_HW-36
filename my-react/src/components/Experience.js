@@ -1,25 +1,19 @@
-export function Experience() {
+export function Experience({ items }) {
     return (
         <div>
-        <h3 class="title-main">Work Experience</h3>
-        <div class="work-experience">
-            <p><strong>Name of employer:</strong> Khmelnytskyi regional branch of the All-Ukrainian Network of People Living with
-                HIV</p>
-            <p><strong>Dates of employment:</strong> 2020 - 2022</p>
-            <p><strong>Job title:</strong> Accountant</p>
-            <p><strong>Project/Role description: </strong> Realization of tender purchases. Maintaining current contractual
-                documentation
-            </p>
+            <h3 class="title-main">Work Experience</h3>
+            <div class="work-experience">
+                <ul className="contact-info">
+                    {items.map(item => (
+                        <li key={item.id}>Title: {item.title}
+                            <p>Company name: {item.name} </p>
+                            <p>Description: {item.description} </p>
+                            <a class="contact-info-link" href="">{item.link}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
-        <div class="work-experience">
-            <p><strong>Name of employer:</strong> Khmelnytskyi District Administrative Court</p>
-            <p><strong>Dates of employment:</strong> 2008 - 2012</p>
-            <p><strong>Job title:</strong> Accountant</p>
-            <p><strong>Project/Role description: </strong> Maintaining current contractual documentation</p>
-        </div>
-        </div>
-
-
     )
 
 }
