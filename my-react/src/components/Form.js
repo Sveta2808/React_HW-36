@@ -1,23 +1,46 @@
-export function Form() {
+import { useState } from "react";
+
+export function Form({ onAdd }) {
+    const [value, setValue] = useState('');
+
+    function handleAdd() {
+        onAdd(value);
+        setValue ('');
+    }
+
+
     return (
         <div>
 
-            <form className="form">
-                Title:<br></br>
-                <input type="text" name="title" />
+           
+                <label htmlFor="title">Title:</label>
                 <br></br>
-                Company name:<br></br>
-                <input type="text" name="name" />
+                <input
+                    type="text"
+                    id="title"
+                    value={value}
+                    onChange={e => setValue(e.target.value)} />
+                <br></br>
+                <label htmlFor="name">Company name:</label>
+                <br></br>
+                <input
+                    type="text"
+                    id="name" />
 
                 <br></br>
-                <label for="Description">Description:</label>
+                <label htmlFor="Description">Description:</label>
                 <br></br>
                 <textarea rows="5" cols="50" name="description"
                     id="Description">
                 </textarea>
                 <br></br>
-                <input type="text" value="link" />
-            </form>
+                <label htmlFor="link">Link:</label>
+                <br></br>
+                <input
+                    type="text"
+                    id="link" />
+                <button onClick={handleAdd}> Add Work Experience </button>
+            
         </div>
     );
 }
