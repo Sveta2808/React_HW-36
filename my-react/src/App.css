@@ -4,7 +4,7 @@
 }
 
 input {
-  width: 380px;
+  width: 390px;
   padding: 10px;
   margin-bottom: 10px;
   
@@ -12,6 +12,11 @@ input {
 
 textarea{
   margin-bottom: 10px;
+}
+
+input, textarea, button, label, .form-title {
+  margin-left: 40px;
+
 }
 
 .my_photo {
@@ -53,6 +58,7 @@ textarea{
 .contact-info-link {
   text-decoration: none;
   color: #1C2E8C;
+  
 }
 
 .title-main {
@@ -65,6 +71,7 @@ textarea{
   margin: 58px 620px 20px 20px;
 
 }
+
 
 .work-experience {
   margin-left: 20px;

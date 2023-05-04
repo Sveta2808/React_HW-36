@@ -15,14 +15,21 @@ const initialExperience = [
     company: 'Khmelnytskyi regional branch of the All-Ukrainian Network of People Living with HIV',
     description: 'Realization of tender purchases. Maintaining current contractual documentation',
     link: 'https://www.youtube.com'
+  },
+  {
+    id: 2,
+    title: 'Accountant',
+    company: 'Khmelnytskyi regional branch of the All-Ukrainian Network of People Living with HIV',
+    description: 'Realization of tender purchases. Maintaining current contractual documentation',
+    link: 'https://www.youtube.com'
   }
 ]
 
 function App() {
   const [items, setItems] = useState(initialExperience);
 
-  function handleAdd(title,company,description,link) {
-    const newItem = { id: items.length + 1, title,company,description,link};
+  function handleAdd(title, company, description, link) {
+    const newItem = { id: items.length + 1, title, company, description, link };
     setItems([...initialExperience, newItem]);
   }
 
