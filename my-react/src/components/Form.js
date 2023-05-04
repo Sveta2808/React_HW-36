@@ -1,11 +1,15 @@
 import { useState } from "react";
 
 export function Form({ onAdd }) {
-    const [value, setValue] = useState('');
+    const [title, setTitle] = useState('');
+    const [company, setCompany] = useState('');
+    const [description, setDescription] = useState('');
 
     function handleAdd() {
-        onAdd(value);
-        setValue ('');
+        onAdd(title, company, description);
+        setTitle('');
+        setCompany('');
+        setDescription('');
     }
 
 
@@ -18,20 +22,27 @@ export function Form({ onAdd }) {
                 <input
                     type="text"
                     id="title"
-                    value={value}
-                    onChange={e => setValue(e.target.value)} />
+                    value={title}
+                    onChange={e => setTitle(e.target.value)} />
                 <br></br>
                 <label htmlFor="name">Company name:</label>
                 <br></br>
                 <input
                     type="text"
-                    id="name" />
+                    id="name"
+                    value={company}
+                    onChange={e => setCompany(e.target.value)} />
 
                 <br></br>
-                <label htmlFor="Description">Description:</label>
+                <label htmlFor="description">Description:</label>
                 <br></br>
-                <textarea rows="5" cols="50" name="description"
-                    id="Description">
+                <textarea rows="5" cols="50" 
+                name="description"
+                    id="description"
+                    value={description}
+                    onChange={e => setDescription(e.target.value)}
+                    >
+                        
                 </textarea>
                 <br></br>
                 <label htmlFor="link">Link:</label>
@@ -41,6 +52,6 @@ export function Form({ onAdd }) {
                     id="link" />
                 <button onClick={handleAdd}> Add Work Experience </button>
             
-        </div>
+        </div >
     );
 }

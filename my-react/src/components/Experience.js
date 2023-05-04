@@ -6,7 +6,7 @@ export function Experience({ items }) {
                 <ul className="contact-info">
                     {items.map(item => (
                         <li key={item.id}>Title: {item.title}
-                            <p>Company name: {item.name} </p>
+                            <p>Company name: {item.company} </p>
                             <p>Description: {item.description} </p>
                             <a className="contact-info-link" href="">{item.link}</a>
                         </li>
