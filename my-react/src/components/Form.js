@@ -4,12 +4,14 @@ export function Form({ onAdd }) {
     const [title, setTitle] = useState('');
     const [company, setCompany] = useState('');
     const [description, setDescription] = useState('');
+    const [link, setLink] = useState('');
 
     function handleAdd() {
-        onAdd(title, company, description);
+        onAdd(title, company, description,link);
         setTitle('');
         setCompany('');
         setDescription('');
+        setLink('');
     }
 
 
@@ -49,7 +51,9 @@ export function Form({ onAdd }) {
                 <br></br>
                 <input
                     type="text"
-                    id="link" />
+                    id="link"
+                    value={link}
+                    onChange={e => setLink(e.target.value)} />
                 <button onClick={handleAdd}> Add Work Experience </button>
             
         </div >

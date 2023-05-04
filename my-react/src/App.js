@@ -21,8 +21,8 @@ const initialExperience = [
 function App() {
   const [items, setItems] = useState(initialExperience);
 
-  function handleAdd(title,company,description) {
-    const newItem = { id: items.length + 1, title,company,description};
+  function handleAdd(title,company,description,link) {
+    const newItem = { id: items.length + 1, title,company,description,link};
     setItems([...initialExperience, newItem]);
   }
 
