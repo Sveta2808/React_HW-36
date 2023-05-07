@@ -1,12 +1,13 @@
 
 import './App.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Experience } from './components/Experience';
 import { ContInfo } from './components/ContInfo';
-import { My_Photo } from './components/Photo';
+import { MyPhoto } from './components/Photo';
 import MyImg from './images/photo.jpg';
 import { Counter } from './components/Counter';
 import { Form } from './components/Form';
+import {useRepos} from './hooks/useRepos';
 
 const initialExperience = [
   {
@@ -38,7 +39,7 @@ function App() {
   return (
     <div className="App">
 
-      <My_Photo img={MyImg} />
+      <MyPhoto img={MyImg} />
       <ContInfo />
       <Form onAdd={handleAdd} />
 
