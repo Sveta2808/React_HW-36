@@ -1,13 +1,14 @@
 
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Experience } from './components/Experience';
 import { ContInfo } from './components/ContInfo';
 import { MyPhoto } from './components/Photo';
 import MyImg from './images/photo.jpg';
 import { Counter } from './components/Counter';
 import { Form } from './components/Form';
-import {useRepos} from './hooks/useRepos';
+import { Repos } from './components/Repos';
+import { useRepos } from './hooks/useRepos';
 
 const initialExperience = [
   {
@@ -27,6 +28,7 @@ const initialExperience = [
 ]
 
 function App() {
+  const [ repos ] = useRepos();
   const [items, setItems] = useState(initialExperience);
 
   function handleAdd(title, company, description, link) {
@@ -44,8 +46,8 @@ function App() {
       <Form onAdd={handleAdd} />
 
       <Experience items={items} />
-
       <Counter />
+      <Repos repos={repos} />
     </div>
   );
 }

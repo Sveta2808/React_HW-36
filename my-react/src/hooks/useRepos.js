@@ -1,18 +1,22 @@
 import { useState, useEffect } from "react";
 
+const API_REPOS = 'https://api.github.com/users/Sveta2808/repos';
 
-const API_REPOS = 'https://api.github.com/users/Sveta2808/repos'; 
+export function useRepos(initialRepos = []) {
+    const [repos, setRepos] = useState(initialRepos);
 
-export default function useRepos (inicialRepos =[]) {
-    const [repos, setRepos] = useState (inicialRepos);
+    useEffect(() => {
+        fetch(API_REPOS)
+            .then(response => response.json())
+            .then(data => {
+                const repos = data.map(repo => ({
+                    name: repo.full_name,
+                    url: repo.html_url,
+                    description: repo.description
 
-    useEffect(() =>{
-        fetch( API_REPOS)
-        .then(responce => responce.json())
-        .then (data=>{
-            console.log(data);
-        })
-
+                }));
+                setRepos(repos);
+            })
     }, [])
 
     return repos;
